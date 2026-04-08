@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>table</title>
+
+        <style>
+            table, th, td  {
+                text-align: left;
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            tr:nth-child(even) {
+                background-color: lightgoldenrodyellow;
+            }
+            th, td {
+                padding: 5px;
+            }
+            th {
+                background-color: gray;
+                color: #ffffff;
+                text-align: center;
+            }
+            .ele {
+                width: 100px;
+                border: 2px solid green;
+                position: fixed;
+                top: 10px;
+                right: 10px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <table>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</td>
+            </tr>
+            <tr>
+                <td>1</th>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</th>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</th>
+                <td>3</td>
+            </tr>
+        </table>
+
+        <div class="ele">The div element has position: fixed;
+    </body>
+</html>
