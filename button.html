@@ -4,6 +4,32 @@
         <title>button</title>
 
         <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .out-frame {
+                width: 496px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .bar {
+                width: 100%;
+                height: 35px;
+                background-color: #f0f0f0;
+                padding: 0 22px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .title {
+                color: #707070;
+                font-size: 13px;
+            }
             .btn {
                 height: 22px;
                 color: #2f2f2f;
@@ -12,15 +38,68 @@
                 border-radius: 8px;
                 outline: 1px #2f2f2f;
                 line-height: 18px;
+                padding: 0 18px;
             }
             .btn:hover {
-                background-color: #d0d0d0;
+                background-color: #e0e0e0;
                 cursor: pointer;
+            }
+            .frame {
+                max-height: 300px;
+                overflow-y: auto;
+                padding: 0 26px 0 20px;
+            }
+            img {
+                width: 450px;
+                height: 240px;
+                margin: 10px 0;
+            }
+            .text-frame {
+                margin-bottom: 4px;
+                display: none;
+            }
+            .text {
+                color: #707070;
+                font-size: 13px;
+                margin-bottom: 6px;
             }
         </style>
     </head>
     
     <body>
-        <button class="btn">查看資訊</button>
+        <div class="out-frame">
+            <div class="bar">
+                <div class="title">預覽</div>
+                <button class="btn" onclick="Click()">查看資訊</button>
+            </div>
+            <div class="frame">
+                <img src="./img.jpg" />
+                <div class="text-frame">
+                    <div class="text">修改日期: 2024/08/19</div>
+                    <div class="text">類型: JPG</div>
+                    <div class="text">大小: 640x480</div>
+                    <div class="text">內容: apioneposjoob/algkheoislge.mlsihla</div>
+                </div>
+            </div>       
+        </div>
+
+        <script>
+            const textEle = document.querySelector(".text-frame");
+            const btnEle = document.querySelector(".btn");
+
+            let counter = 0;
+
+            const Click = () => {
+                counter += 1;
+
+                if (counter % 2 == 0) {
+                    textEle.style.display = "none";
+                    btnEle.innerHTML = "查看資訊";
+                } else {
+                    textEle.style.display = "block";
+                    btnEle.innerHTML = "收起資訊";
+                }
+            }
+        </script>
     </body>
 </html>
