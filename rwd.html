@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <title>RWD</title>
+    <style>
+        body {
+            background-color: #7eb4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .card-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .header-box {
+            background-color: #b8d96d;
+            height: 120px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .content-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .content-box {
+            background-color: #6dc0cc;
+            height: 150px;
+            flex: 1;
+            border-radius: 5px;
+        }
+        .footer-group {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .footer-box {
+            background-color: #ebf0f2; 
+            height: 60px;
+            border-radius: 5px;
+        }
+        @media (max-width: 480px) {
+            .content-group {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(3, 1fr);
+            }
+            .content-box {
+                height: 60px;
+            }
+            .footer-group {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <div class="header-box"></div>
+
+        <div class="content-group">
+            <div class="content-box"></div>
+            <div class="content-box"></div>
+            <div class="content-box"></div>
+        </div>
+
+        <div class="footer-group">
+            <div class="footer-box"></div>
+            <div class="footer-box"></div>
+            <div class="footer-box"></div>
+            <div class="footer-box"></div>
+        </div>
+    </div>
+
+</body>
+</html>
