@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Button Interaction Task</title>
+    <style>
+        .container {
+            border: 1px solid #ccc;
+            padding: 40px;
+            width: 200px;
+        }
+        #text-display {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: black;
+            font-family: serif;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="text-display">Hello</div>
+        <button id="action-button">Button</button>
+    </div>
+
+    <script>
+        const textDisplay = document.getElementById("text-display");
+        const button = document.getElementById("action-button");
+
+        button.addEventListener("mouseover", function() {
+            textDisplay.style.color = "magenta";
+            textDisplay.innerText = "Hello";
+        });
+
+        button.addEventListener("mouseout", function() {
+            textDisplay.style.color = "black";
+            textDisplay.innerText = "Hello";
+        });
+
+        button.addEventListener("mousedown", function() {
+            textDisplay.innerText = "Mouse Click";
+            textDisplay.style.color = "magenta";
+        });
+    </script>
+
+</body>
+</html>
