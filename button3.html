@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation Practice</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 24px;
+            font-family: serif;
+        }
+        input, button {
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Please input a number between 150 and 300:</p>
+    
+    <input type="text" id="user-input" placeholder="Enter number">
+    <button onclick="validateInput()">Submit</button>
+
+    <div id="message"></div>
+
+    <script>
+        function validateInput() {
+            const val = document.getElementById('user-input').value;
+            const messageElement = document.getElementById('message');
+            
+            const num = Number(val);
+
+            if (val === "" || isNaN(num)) {
+                messageElement.innerText = "Please enter a valid number";
+            } else if (num < 150) {
+                messageElement.innerText = "Value too small";
+            } else if (num > 300) {
+                messageElement.innerText = "Value too large";
+            } else {
+                messageElement.innerText = "Input OK";
+            }
+        }
+    </script>
+
+</body>
+</html>
